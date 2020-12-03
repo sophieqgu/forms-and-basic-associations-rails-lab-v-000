@@ -5,7 +5,7 @@ class Song < ActiveRecord::Base
   has_many :notes
 
   def artist_name
-    self.try(:artist).try(:name)
+    self.artist.name if self.artist
   end
 
   def artist_name=(name)
@@ -14,7 +14,7 @@ class Song < ActiveRecord::Base
   end
 
   def genre_name
-    self.try(:genre).try(:name)
+    self.genre.name if self.genre
   end
 
   def genre_name=(name)
