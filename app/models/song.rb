@@ -12,16 +12,7 @@ class Song < ActiveRecord::Base
     artist = Artist.find_or_create_by(name: name)
     self.artist = artist
   end
-=begin
-  def genre_name
-    self.genre.name if self.genre
-  end
 
-  def genre_name=(name)
-    genre = Genre.find_or_create_by(name: name)
-    self.genre = genre
-  end
-=end
   def note_contents
     self.notes.map {|note| note.content}
   end
