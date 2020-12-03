@@ -29,7 +29,7 @@ class Song < ActiveRecord::Base
   def note_contents=(contents)
     contents.each do |c|
       if !c.empty?
-        note = Note.create(content: content, song_id: self.id)
+        note = Note.create(content: c, song_id: self.id)
         self.notes << note
       end
     end
